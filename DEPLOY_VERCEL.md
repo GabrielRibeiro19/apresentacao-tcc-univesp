@@ -34,10 +34,12 @@
 2. Aguarde alguns segundos
 3. Pronto! Você receberá uma URL como: `https://seu-projeto.vercel.app`
 
-### Passo 5: Configurar Página Inicial
-Para que `apresentacao.html` seja a página inicial:
-1. Vá em **Settings** → **Deployments**
-2. Ou renomeie `apresentacao.html` para `index.html` antes do deploy
+### Passo 5: URLs Amigáveis
+Após o deploy, você terá:
+- **Apresentação principal**: `https://seu-projeto.vercel.app/` ou `https://seu-projeto.vercel.app/apresentacao`
+- **Roteiro**: `https://seu-projeto.vercel.app/roteiro`
+
+O arquivo `vercel.json` já está configurado para criar essas URLs amigáveis!
 
 ---
 
@@ -90,7 +92,9 @@ A forma mais simples é renomear o arquivo:
   - [ ] `figura-4.png`
   - [ ] `figura-5.png`
   - [ ] `apendice.jpg`
-- [ ] Arquivo HTML principal (`apresentacao.html` ou `index.html`)
+- [ ] Arquivo HTML principal (`index.html` - já renomeado)
+- [ ] `roteiro_apresentacao.html` incluído
+- [ ] `vercel.json` incluído (para URLs amigáveis)
 - [ ] Testar localmente abrindo o HTML no navegador
 
 ---
@@ -113,10 +117,16 @@ A forma mais simples é renomear o arquivo:
 
 ## 📱 Acessar Durante a Apresentação
 
-1. Abra a URL no navegador do dispositivo de apresentação
+### Apresentação Principal:
+1. Abra a URL: `https://seu-projeto.vercel.app/`
 2. Pressione **F11** para tela cheia
 3. Use as setas do teclado para navegar
-4. Todos os integrantes podem acessar a mesma URL em seus dispositivos
+4. Clique no botão "📋 Ver Roteiro" no canto inferior direito para abrir o roteiro
+
+### Roteiro (para consulta em segundo plano):
+1. Abra a URL: `https://seu-projeto.vercel.app/roteiro`
+2. Cada pessoa pode abrir em seu dispositivo pessoal
+3. Consulte discretamente durante a apresentação
 
 ---
 

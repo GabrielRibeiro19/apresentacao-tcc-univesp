@@ -9,34 +9,42 @@ MÉTODO MAIS FÁCIL (5 minutos):
 3. Clique em "Add New..." → "Project"
 4. Escolha "Upload a folder" ou "Deploy"
 5. Selecione TODOS os arquivos:
-   ✅ apresentacao.html (ou renomeie para index.html)
+   ✅ index.html (apresentação principal)
+   ✅ roteiro_apresentacao.html (roteiro)
+   ✅ vercel.json (configuração)
    ✅ logo-univesp.png
    ✅ fundo.jpg
-   ✅ figura-1.png
-   ✅ figura-2.png
-   ✅ fgura-3.png
-   ✅ figura-4.png
-   ✅ figura-5.png
+   ✅ figura-1.png, figura-2.png, fgura-3.png
+   ✅ figura-4.png, figura-5.png
    ✅ apendice.jpg
 
 6. Clique em "Deploy"
-7. Pronto! Você receberá uma URL tipo:
-   https://seu-projeto.vercel.app
+7. Pronto! Você receberá URLs:
+   - Apresentação: https://seu-projeto.vercel.app/
+   - Roteiro: https://seu-projeto.vercel.app/roteiro
 
 ═══════════════════════════════════════════════════════
 
-💡 DICA IMPORTANTE:
-Para que a apresentação seja a página inicial:
-→ Renomeie "apresentacao.html" para "index.html"
+📱 URLS AMIGÁVEIS CONFIGURADAS:
 
-Ou configure o vercel.json (já está criado)
+✅ / ou /apresentacao → Apresentação principal
+✅ /roteiro → Roteiro de apresentação
+
+O arquivo vercel.json já está configurado!
 
 ═══════════════════════════════════════════════════════
 
 📱 USAR NA APRESENTAÇÃO:
-1. Abra a URL no navegador
+
+Apresentação Principal:
+1. Abra: https://seu-projeto.vercel.app/
 2. Pressione F11 para tela cheia
 3. Use as setas do teclado para navegar
-4. Todos podem acessar a mesma URL!
+4. Clique no botão "📋 Ver Roteiro" no canto inferior direito
+
+Roteiro (para consulta):
+1. Abra: https://seu-projeto.vercel.app/roteiro
+2. Cada pessoa pode abrir em seu dispositivo pessoal
+3. Consulte discretamente durante a apresentação
 
 ═══════════════════════════════════════════════════════
