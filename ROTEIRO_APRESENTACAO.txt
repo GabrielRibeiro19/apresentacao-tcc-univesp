@@ -1,0 +1,263 @@
+═══════════════════════════════════════════════════════
+📋 ROTEIRO DE APRESENTAÇÃO - TCC
+Tutor Inteligente e Adaptativo em IA para Matemática
+═══════════════════════════════════════════════════════
+
+⏱ TEMPO TOTAL: 20 minutos
+👥 APRESENTADORES: 8 integrantes
+📊 TOTAL DE SLIDES: 14
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 1: CAPA (0:00 - 0:30)
+👤 Apresentação conjunta de toda equipe
+📝 Apresentar o trabalho e equipe
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 2: CONTEXTUALIZAÇÃO (0:30 - 2:00)
+👤 Brenno Calderan Brossi - RA: 221084
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Realidade do Ensino de Matemática no Brasil:
+  - Baixos índices de proficiência (SAEB/INEP 2023)
+  - Desempenho brasileiro abaixo da média internacional (PISA 2023)
+  - Metodologias tradicionais uniformizam o ensino
+
+• Oportunidade com IA:
+  - IA como alternativa promissora para personalização
+  - Potencial para reduzir desigualdades (UNESCO 2023)
+  - Relevante para escolas públicas e contextos de vulnerabilidade
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 3: PROBLEMA DE PESQUISA (2:00 - 3:30)
+👤 Camila Cristina Paiva Vieira - RA: 2101658
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Questão Central:
+  "Como desenvolver um tutor inteligente, baseado em IA, capaz de personalizar o ensino de Matemática para estudantes do Ensino Médio, considerando princípios éticos, pedagógicos e de acessibilidade?"
+
+• Desafios Identificados:
+  - Educação tradicional não atende diferenças individuais (Piaget, Vygotsky)
+  - Dificuldades persistentes em Matemática
+  - INEP (2023) mostra índices entre os mais baixos
+  - Necessidade de abordagens flexíveis e individualizadas
+  - IA pode promover experiências adaptativas (Holmes, Bialik e Fadel, 2019)
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 4: JUSTIFICATIVA (3:30 - 5:00)
+👤 Eder Clauber dos Santos dos Anjos - RA: 1806662
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Relevância em Quatro Dimensões:
+  - PESSOAL: Reflexões próprias, originalidade da proposta
+  - ACADÊMICA: Contribui com pesquisas sobre STIs, interação entre engenharia e psicologia educacional
+  - PROFISSIONAL: Aplicável em plataformas digitais e cursos preparatórios
+  - SOCIAL: Ampliar acesso, especialmente em contextos de vulnerabilidade
+  - IA como APOIO ao professor, NÃO substituição
+
+• Dados que reforçam:
+  - Elevados índices de reprovação e evasão (INEP 2023)
+  - Potencial para reduzir desigualdades (UNESCO 2023)
+  - Necessidade de políticas claras para proteção de dados (OECD 2021)
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 5: OBJETIVOS (5:00 - 6:30)
+👤 Franklin Leandro Martins - RA: 1401068
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Objetivo Geral:
+  Propor e descrever um modelo teórico de tutor inteligente e adaptativo, baseado em IA com foco na personalização do ensino de matemática no segundo ano do ensino médio.
+
+• Objetivos Específicos:
+  1. Mapear e analisar técnicas de IA aplicáveis à personalização
+  2. Integrar fundamentos pedagógicos (Piaget e Vygotsky)
+  3. Definir requisitos e personas de estudantes
+  4. Estruturar arquitetura conceitual do tutor adaptativo
+  5. Discutir vantagens, limitações e riscos do modelo
+  6. Produzir estudo crítico para engenharia da computação
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 6: METODOLOGIA (6:30 - 8:00)
+👤 Julio Anderson Guimarães Leite - RA: 2104217
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Tipo de Pesquisa:
+  - Qualitativa e exploratória
+  - Ciclo "ouvir, criar, implementar" (UNIVESP)
+  - Gil (2008): familiaridade com o problema
+  - Severino (2002): compreender complexidade e contexto
+
+• Revisão Bibliográfica Sistemática:
+  - IEEE Xplore Digital Library
+  - SciELO
+  - Portal CAPES
+  - Termos: "intelligent tutoring systems", "adaptive learning", "IA na educação"
+
+• Fundamentação e Experimentação:
+  - Fundamentos: Piaget (estágios cognitivos), Vygotsky (interação social)
+  - Experimentação: Modelos LLM (LLaMA 3, Mistral, Phi-3) via Ollama
+  - Testes: 10 estudantes com questionários
+  - Análise: Qualitativa (Bardin, 2016) - clareza, usabilidade, relevância
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 7: ARQUITETURA DO TUTOR INTELIGENTE (8:00 - 9:30)
+👤 Gabriel Henrique Souza Ribeiro - RA: 2213730
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Estrutura dos 4 Módulos:
+  1. Modelo do Estudante: Acompanha progresso, registra dúvidas, erros, tempo de resposta. Atualizado continuamente.
+  2. Modelo Pedagógico: Baseado em Piaget (construtivismo) e Vygotsky (sociointeracionismo). Orienta escolha de explicações.
+  3. Base de Conteúdos: Materiais do 2º ano do EM - exercícios, definições, exemplos resolvidos, problemas contextualizados.
+  4. Motor de IA: LLaMA 3 (detalhado), Mistral (direto), Phi-3 (curto). Executados localmente via Ollama.
+
+• Fluxo de Interação:
+  Aluno envia dúvida → Sistema identifica perfil → Seleciona conteúdo → Motor de IA gera explicação → Resposta avaliada → Modelo atualizado
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 8: PROTÓTIPO DO TUTOR INTELIGENTE (9:30 - 11:00)
+👤 Tiago Prado Moreira - RA: 2109577
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Interface do Sistema (mostrar Figura 1):
+  - Menu para seleção de modelo de IA
+  - Opções: LLaMA 3, Mistral, Phi-3
+
+• Funcionalidades Implementadas:
+  - Seleção de modelo de IA
+  - Interface web intuitiva e responsiva
+  - Comunicação com Ollama via API local
+
+💡 DICA: Você tirou os prints, pode explicar as imagens que capturou!
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 9: EXEMPLOS DE INTERAÇÃO (11:00 - 12:30)
+👤 Tiago Prado Moreira - RA: 2109577
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Mostrar Figuras 2 e 3:
+  - Figura 2: Interação com Phi-3 (lado esquerdo)
+  - Figura 3: Interface com Mistral (lado direito)
+
+• Características das Interações:
+  - Phi-3: Respostas curtas e diretas (perguntas objetivas)
+  - Mistral: Respostas concisas (problemas práticos)
+  - LLaMA 3: Explicações detalhadas e contextualizadas
+
+💡 DICA: Destaque as diferenças entre os modelos!
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 10: VANTAGENS DO OLLAMA (12:30 - 14:00)
+👤 Vera Lucia de Oliveira Silverio - RA: 2231483
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Por que escolher execução local?
+  1. PRIVACIDADE: Dados permanecem localmente, sem envio para servidores externos
+  2. CUSTO: Reduzido, sem dependência de servidores externos
+  3. ACESSIBILIDADE: Funciona com baixa conectividade
+  4. CUSTOMIZAÇÃO: Ajustável para conteúdos específicos (Moodle, Telegram)
+  5. CONTROLE: Total sobre dados dos estudantes (LGPD)
+  6. DIFERENCIAL: Solução técnica específica para execução local (não abordado em trabalhos anteriores)
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 11: RESULTADOS DA AVALIAÇÃO (14:00 - 15:30)
+👤 Brenno Calderan Brossi - RA: 221084
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Estatísticas:
+  - Média de avaliação: 4,2 a 4,8 (escala 0-5)
+  - 10 usuários testados
+
+• Mostrar Figuras 4 e 5:
+  - Figura 4: Avaliação dos critérios de desempenho
+  - Figura 5: Nível de satisfação geral
+
+• Principais Conclusões:
+  - Viabilidade comprovada de modelos locais (Ollama)
+  - Boa aceitação geral dos usuários
+  - Potencial para reforçar aprendizado e explicações personalizadas
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 12: APÊNDICE A - QUESTIONÁRIO (15:30 - 17:00)
+👤 Camila Cristina Paiva Vieira - RA: 2101658
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Mostrar Apêndice:
+  - Questionário utilizado na avaliação
+  - 10 estudantes testados
+
+• Explicar:
+  - Instrumento aplicado para coletar dados
+  - Critérios: clareza, usabilidade, relevância, tempo de resposta, confiança no sistema
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 13: CONCLUSÃO (17:00 - 18:30)
+👤 Eder Clauber dos Santos dos Anjos - RA: 1806662
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Contribuições Principais:
+  - IA representa oportunidade valiosa para inovar práticas pedagógicas
+  - Potencializa personalização, engajamento e eficácia
+  - Atua como ponte entre conhecimento formal e realidade
+  - Modelo demonstra viabilidade técnica com execução local
+
+• Desafios e Necessidades:
+  - Investir em formação docente
+  - Requer infraestrutura tecnológica (mas com custo reduzido)
+  - Precisa de políticas claras para proteção de dados (OECD 2021)
+  - Uso ético pode tornar ensino mais inclusivo
+
+• Mensagem Final:
+  "A tecnologia, aliada ao olhar humano, tem potencial transformador"
+  - IA como ferramenta de apoio ao professor, NÃO substituição
+
+═══════════════════════════════════════════════════════
+
+📌 SLIDE 14: AGRADECIMENTOS (18:30 - 20:00)
+👤 Todos os Integrantes
+
+🎯 TÓPICOS PARA APRESENTAR:
+• Agradecer pela atenção
+• Apresentar a Banca Examinadora
+• Estar disponível para perguntas
+
+═══════════════════════════════════════════════════════
+
+📝 DICAS GERAIS PARA TODOS:
+
+✅ Fale pausadamente e com clareza
+✅ Use os slides como guia - o conteúdo está detalhado
+✅ Mantenha contato visual com a banca
+✅ Se precisar, consulte o roteiro discretamente
+✅ Respeite o tempo de cada slide (~1,5 minutos)
+✅ Na dúvida, seja direto e objetivo
+
+═══════════════════════════════════════════════════════
+
+🎯 DISTRIBUIÇÃO DE TEMPO:
+
+Brenno: 2 slides (Contextualização + Resultados) = ~3 min
+Camila: 2 slides (Problema + Apêndice) = ~3 min
+Eder: 2 slides (Justificativa + Conclusão) = ~3 min
+Franklin: 1 slide (Objetivos) = ~1,5 min
+Gabriel: 1 slide (Arquitetura) = ~1,5 min
+Julio: 1 slide (Metodologia) = ~1,5 min
+Tiago: 2 slides (Protótipos) = ~3 min
+Vera: 1 slide (Vantagens Ollama) = ~1,5 min
+
+═══════════════════════════════════════════════════════
+
+🚀 BOA SORTE NA APRESENTAÇÃO! 🎓
+
+═══════════════════════════════════════════════════════

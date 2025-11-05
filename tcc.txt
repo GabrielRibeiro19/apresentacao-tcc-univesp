@@ -1,0 +1,542 @@
+UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO
+UNIVESP
+
+
+
+
+BRENNO CALDERAN BROSSI, RA 221084
+CAMILA CRISTINA PAIVA VIEIRA, RA 2101658
+EDER CLAUBER DOS SANTOS DOS ANJOS, RA 1806662
+FRANKLIN LEANDRO MARTINS, RA 1401068
+GABRIEL HENRIQUE SOUZA RIBEIRO, RA 2213730
+JULIO ANDERSON GUIMARÃES LEITE, RA 2104217
+TIAGO PRADO MOREIRA, RA 2109577
+ VERA LUCIA DE OLIVEIRA SILVERIO, RA 2231483
+
+
+
+
+TUTOR INTELIGENTE E ADAPTATIVO EM INTELIGÊNCIA ARTIFICIAL PARA PERSONALIZAÇÃO DO ENSINO DE MATEMÁTICA NO 2º ANO DO ENSINO MÉDIO.
+
+
+
+
+
+BACHAREL EM ENGENHARIA DA COMPUTAÇÃO
+
+
+
+
+
+São Paulo - SP
+2025 
+BRENNO CALDERAN BROSSI, RA 221084
+CAMILA CRISTINA PAIVA VIEIRA, RA 2101658
+EDER CLAUBER DOS SANTOS DOS ANJOS, RA 1806662
+FRANKLIN LEANDRO MARTINS, RA 1401068
+GABRIEL HENRIQUE SOUZA RIBEIRO, RA 2213730
+JULIO ANDERSON GUIMARÃES LEITE, RA 2104217
+TIAGO PRADO MOREIRA, RA 2109577
+ VERA LUCIA DE OLIVEIRA SILVERIO, RA 2231483
+
+
+
+
+
+
+TUTOR INTELIGENTE E ADAPTATIVO EM INTELIGÊNCIA ARTIFICIAL PARA PERSONALIZAÇÃO DO ENSINO DE MATEMÁTICA NO 2º ANO DO ENSINO MÉDIO.
+
+
+
+Monografia apresentada à banca examinadora da Universidade Virtual do Estado de São Paulo, como exigência parcial para obtenção do título de Bacharel em Engenharia da Computação, sob a orientação do Alex Sandro Rodrigues Ancioto
+
+
+
+
+
+
+São Paulo
+2025
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Banca Examinadora
+
+_________________________________
+
+_________________________________
+
+_________________________________
+
+_________________________________
+
+_________________________________
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+À comunidade da Universidade Virtual do Estado de São Paulo pelo apoio permanente.
+
+ 
+AGRADECIMENTOS
+
+Agradecemos primeiramente a Deus, pela força, sabedoria e perseverança concedidas ao longo de toda esta jornada acadêmica.
+Expressamos nossa sincera gratidão ao professor Alex Sandro Rodrigues Ancioto, nosso orientador, pela paciência, dedicação e por compartilhar conosco seus conhecimentos e orientações fundamentais para a realização deste trabalho. Sua contribuição foi essencial para o nosso crescimento acadêmico e profissional.
+Agradecemos também a todos os professores do curso, que com empenho e comprometimento contribuíram para a nossa formação, oferecendo ensinamentos valiosos que levaremos para toda a vida.
+Aos colegas e amigos, pelo companheirismo, incentivo e apoio nas horas de maior desafio. Às nossas famílias, pelo amor incondicional, compreensão e suporte em todos os momentos desta trajetória — sem vocês, nada disso seria possível.
+Por fim, estendemos nossos agradecimentos a todos que, de alguma forma, contribuíram para o desenvolvimento deste trabalho, seja com palavras de incentivo, colaboração ou apoio moral. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ninguém ignora tudo. Ninguém sabe tudo. Todos nós sabemos alguma coisa. Todos nós ignoramos alguma coisa. Por isso aprendemos sempre. (FREIRE, 1987, p. 45).
+
+RESUMO
+
+A presente monografia de caráter teórico propõe a elaboração e descrição de um modelo de tutor inteligente e adaptativo, baseado em Inteligência Artificial (IA), voltado à personalização do ensino de matemática para estudantes do 2º ano do Ensino Médio. A pesquisa surge em resposta às limitações da educação tradicional em atender as necessidades individuais de alunos com dificuldade de aprendizagem. O problema central investigado é como desenvolver um tutor que ajuste o conteúdo conforme o progresso individual, garantindo acessibilidade e ética. A metodologia se baseia em uma revisão sistemática da literatura, mapeando técnicas de IA aplicáveis e integrando fundamentos pedagógicos de Piaget (1999) e Vygotsky (2007) à modelagem do sistema. A hipótese é que tal tutor pode promover maior engajamento e melhor desempenho acadêmico. Espera-se que o modelo proposto contribua significativamente para a engenharia da computação e sirva como ferramenta de apoio ao professor, ampliando o acesso à educação personalizada.
+
+Palavras-chave: Inteligência Artificial, Tutor Inteligente, Ensino de Matemática, Aprendizagem Adaptativa, Personalização.
+ 
+ABSTRACT
+
+This theoretical monography proposes the elaboration and description of an intelligent and adaptive tutor model, based on Artificial Intelligence (AI), focused on the personalization of mathematics teaching for 2nd-year high school students. The research arises in response to the limitations of traditional education in meeting the individual needs of students with learning difficulties. The central problem investigated is how to develop a tutor that adjusts content according to individual progress, ensuring accessibility and ethics. The methodology is based on a systematic literature review, mapping applicable AI techniques and integrating pedagogical fundamentals from Piaget (1999) and Vygotsky (2007) into the system modeling. The hypothesis is that such a tutor can promote greater engagement and improved academic performance. The proposed model is expected to contribute significantly to computer engineering and serve as a tool to support teachers, expanding access to personalized education.
+
+Keywords: Artificial Intelligence, Intelligent Tutor, Mathematics Teaching, Adaptive Learning, Personalization.
+ 
+LISTA DE ILUSTRAÇÕES
+Figura 1 – Menu para seleção de modelo de IA desejado.	33
+Figura 2 - Exemplo de interação com o software no model phi3	34
+Figura 3 - Interface do tutor inteligente model mistral	36
+Figura 4 - Avaliação dos critérios de desempenho do tutor inteligente.	37
+Figura 5 - Nível de satisfação geral dos usuários.	38
+
+
+ 
+LISTA DE TABELAS
+Tabela 1 - Trabalhos relacionados	23
+Tabela 2 – Síntese da metodologia utilizada	28
+
+LISTA DE ABREVIATURAS E SIGLAS
+
+IA	Inteligência Artificial
+TCC	Trabalho de Conclusão de Curso
+
+SUMÁRIO
+
+1	INTRODUÇÃO	15
+1.1	Contextualização do tema	15
+1.2	Problema de pesquisa	15
+1.3	Justificativa	17
+1.4	Objetivos	18
+a)	Objetivo Geral:	18
+b)	Objetivos Específicos:	18
+1.5	Metodologia	19
+1.6	Estrutura do trabalho	19
+2	REFERENCIAL TEÓRICO	20
+2.1	Trabalhos relacionados	21
+3	METODOLOGIA	24
+3.1	Tipo de pesquisa	24
+3.2	Abordagem geral	24
+3.3	Pesquisa bibliográfica sistemática	24
+3.4	Etapas iniciais da pesquisa e fundamentação teórica	25
+3.5	Procedimentos de análise	26
+3.6	Abordagem metodológica pedagógica	26
+3.7	Metodologia técnica e experimental	26
+3.8	Limitações e justificativas	27
+3.9	Síntese da metodologia	28
+4	DESENVOLVIMENTO	29
+4.1	Etapas do desenvolvimento de sistemas	29
+4.1.1	Análise de requisitos:	29
+4.1.2	Escolha das tecnologias:	29
+4.1.3	Implementação do protótipo:	30
+4.1.4	Ajustes e refinamento de prompts:	30
+4.1.5	Testes de desempenho e usabilidade:	30
+4.2	Vantagens do Uso com Ollama:	30
+4.3	Arquitetura Conceitual do Tutor Inteligente	31
+4.4	Estrutura dos Módulos do Sistema	31
+4.5	Fluxo de Interação Tutor-Aluno	32
+4.6	Exemplo de Personalização na Prática	32
+4.7	Registro Visual do Protótipo	32
+4.8	Coleta de dados e/ou pesquisa de campo	33
+4.9	Estudo de casos	35
+5	RESULTADOS E DISCUSSÃO	37
+5.1	Apresentação dos dados	37
+6	CONCLUSÃO	39
+7	REFERÊNCIAS	40
+8	APÊNDICE A - QUESTIONÁRIO DE AVALIAÇÃO DO TUTOR INTELIGENTE	43
+
+
+
+1	INTRODUÇÃO
+
+1.1	Contextualização do tema
+
+O avanço das tecnologias digitais e o crescimento da IA têm transformado significativamente diversos setores, incluindo a educação. No contexto do ensino médio, especialmente na disciplina de Matemática, as dificuldades de aprendizagem persistem como um desafio recorrente.
+De acordo com o Sistema de Avaliação da Educação Básica (SAEB), os índices de proficiência em Matemática permanecem entre os mais baixos das disciplinas avaliadas, indicando limitações estruturais no processo de ensino e aprendizagem (INEP, 2023). Em âmbito internacional, os resultados do Programme for International Student Assessment (PISA) reforçam esse cenário, demonstrando que o desempenho dos estudantes brasileiros em Matemática está abaixo da média dos países membros da OECD (OECD, 2023).
+Esse quadro é agravado por metodologias tradicionais que tendem a uniformizar o ensino, desconsiderando as diferenças individuais de ritmo e compreensão entre os alunos. Nesse contexto, a utilização de recursos baseados em IA surge como alternativa promissora para apoiar a personalização do ensino e promover uma aprendizagem mais eficaz.
+No cenário educacional brasileiro, a implementação de ferramentas baseadas em IA ainda se encontra em fase inicial, mas apresenta grande potencial. Conforme destaca a UNESCO (2023), o uso ético e responsável da IA na educação pode reduzir desigualdades e ampliar o acesso a recursos de aprendizagem personalizados, especialmente em escolas públicas e contextos de vulnerabilidade. Assim, o tema deste trabalho se insere em um campo de inovação tecnológica e relevância social, buscando aliar fundamentos da engenharia da computação a práticas pedagógicas centradas no aluno.
+
+1.2	Problema de pesquisa
+
+A educação tradicional, baseada em modelos uniformes de ensino, nem sempre consegue atender às diferenças individuais dos estudantes. Essa limitação se torna evidente nas disciplinas de Matemática, nas quais muitos alunos apresentam dificuldades persistentes que comprometem seu desempenho ao longo da vida escolar. Segundo o Instituto Nacional de Estudos e Pesquisas Educacionais (INEP, 2023), os índices de proficiência em Matemática no ensino médio brasileiro permanecem entre os mais baixos da educação básica, evidenciando a necessidade de novas estratégias pedagógicas. De modo semelhante, os resultados do Programme for International Student Assessment (PISA) apontam que o Brasil continua abaixo da média internacional em desempenho matemático, o que indica desafios estruturais no ensino dessa disciplina (OECD, 2023).
+Autores clássicos como Piaget (1999) e Vygotsky (2007) destacam que a aprendizagem é um processo dinâmico, influenciado pelo desenvolvimento cognitivo e pelas interações sociais. Quando o ensino é padronizado e desconsidera essas diferenças, ele tende a dificultar o progresso dos alunos, especialmente daqueles que aprendem em ritmos distintos. Diante disso, torna-se necessário buscar abordagens mais flexíveis e individualizadas que se adaptem às características de cada estudante.
+Nesse contexto, a IA surge como uma alternativa promissora para apoiar professores e estudantes, possibilitando a personalização do ensino e o acompanhamento contínuo da aprendizagem. De acordo com Holmes, Bialik e Fadel (2019), o uso da IA na educação tem potencial para promover experiências adaptativas que ampliem o engajamento e a autonomia dos alunos.
+Diante desse cenário, surgiu o seguinte questionamento de pesquisa:
+Como desenvolver um tutor inteligente, baseado em IA, capaz de personalizar o ensino de Matemática para estudantes do Ensino Médio, considerando princípios éticos, pedagógicos e de acessibilidade?
+Essa problemática orienta toda a pesquisa e justifica a necessidade de explorar soluções tecnológicas inovadoras, capazes de promover o engajamento, a autonomia e o aprendizado personalizado.
+ 
+1.3	Justificativa
+
+O estudo se justifica pela necessidade de encontrar soluções que tornem o ensino de Matemática mais acessível, personalizado e eficiente. Dados do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP, 2023) apontam que a Matemática apresenta um dos piores desempenhos entre as disciplinas avaliadas no Ensino Médio, sendo associada a elevados índices de reprovação e evasão escolar. Esse cenário reforça a importância de metodologias que considerem o perfil individual de aprendizagem.
+De acordo com Piaget (1999) e Vygotsky (2007), o processo de aprendizagem é influenciado pelo ritmo cognitivo e pelas interações sociais, o que reforça a importância de abordagens personalizadas. Neste contexto, a IA surge como uma ferramenta de apoio ao professor, capaz de auxiliar no acompanhamento dos estudantes e oferecer atividades adaptadas ao seu progresso, sem substituir o papel humano no ensino. Segundo Holmes, Bialik e Fadel (2019), a IA tem potencial para ampliar a personalização e o engajamento, desde que utilizada como complemento às práticas pedagógicas.
+A relevância do estudo pode ser observada em quatro dimensões:
+•	Pessoal: surgiu de reflexões próprias, registradas em mapas mentais e anotações, buscando conferir originalidade à proposta.
+•	Acadêmica: contribui com pesquisas sobre sistemas tutores inteligentes e aprendizagem adaptativa, promovendo interação com a engenharia da computação e com a psicologia educacional.
+•	Profissional: pode ser aplicado em plataformas digitais e cursos preparatórios, reforçando o vínculo entre teoria e prática.
+•	Social: contribui com incrementos de educação através de uso de IA entendendo que há limitação em suas contribuições. A intenção é ampliar o acesso a ferramentas adicionais de ensino, porém, sem a substituição do papel do humano atuando como professor.
+Além disso, segundo a UNESCO (2023), a IA aplicada à educação tem potencial de reduzir desigualdades de aprendizado ao oferecer recursos personalizados e acessíveis, especialmente em contextos de vulnerabilidade social. Já a OECD (2021) ressalta que, embora a personalização seja um avanço, é necessário estabelecer políticas claras para a proteção de dados e ética no uso da tecnologia.
+Assim, a combinação entre fundamentos pedagógicos e IA justifica a relevância do projeto, que busca oferecer uma contribuição original e significativa para a engenharia da computação, além de apoiar professores e alunos na superação de dificuldades em matemática, disciplina estratégica para a formação acadêmica e profissional.
+
+1.4	Objetivos
+
+a)	Objetivo Geral:
+Propor e descrever um modelo teórico de tutor inteligente e adaptativo, baseado em IA com foco na personalização do ensino de matemática no segundo ano do ensino médio.
+b)	Objetivos Específicos:
+•	Mapear e analisar técnicas de IA aplicáveis à personalização do ensino com ênfase em aprendizagem adaptativa.
+•	Integrar fundamentos pedagógicos (Piaget, 1999 e Vygotsky, 2007) à modelagem do tutor destacando a sua relevância no ensino de matemática.
+•	Definir requisitos e personas representativas de estudantes do segundo ano do ensino médio considerando perfil de estudos, motivação e contexto socioeconômico.
+•	Estruturar uma arquitetura conceitual de tutor adaptativo (contendo fluxos de interação, funcionalidades além de possíveis interfaces).
+•	Discutir vantagens, limitações e riscos do modelo, entre eles, mau uso, dependência privada, viabilidade técnica e pedagógica.
+•	Produzir um estudo crítico que contribua para a engenharia da computação aplicada a educação mesmo sem desenvolvimento do protótipo funcional.
+1.5	Metodologia
+
+O presente trabalho adota uma metodologia qualitativa e exploratória, baseada em pesquisa bibliográfica sistemática e experimentação prática com modelos de linguagem (LLMs). A pesquisa bibliográfica será conduzida em bases de dados científicas especializadas, visando mapear técnicas de IA aplicáveis à personalização do ensino e fundamentos pedagógicos relevantes. Complementarmente, será realizada uma experimentação prática com modelos de IA executados localmente para validar a viabilidade técnica e conceitual do tutor adaptativo proposto. Detalhes sobre o tipo de pesquisa, técnicas de coleta e análise de dados serão apresentados na Seção de Metodologia deste trabalho.
+
+1.6	Estrutura do trabalho
+
+O presente TCC está organizado nos seguintes tópicos:
+•	Capítulo 1 - Introdução: Apresenta a contextualização do tema, o problema de pesquisa, a justificativa, os objetivos, a metodologia e a estrutura geral do trabalho.
+•	Capítulo 2 – Referencial Teórico: Aborda os conceitos de educação adaptativa, IA aplicada à educação e os principais trabalhos relacionados.
+•	Capítulo 3 – Metodologia: Detalha o tipo de pesquisa, as técnicas de coleta e análise de dados utilizadas.
+•	Capítulo 4 – Desenvolvimento: Descreve as etapas de construção conceitual do tutor inteligente, as tecnologias utilizadas e os testes realizados.
+•	Capítulo 5 – Resultados e Discussão: Apresenta e analisa os resultados obtidos com base nas simulações e interações realizadas.
+•	Capítulo 6 - Conclusão: Traz as considerações finais, as limitações encontradas e sugestões para estudos futuros.
+•	Referências: As obras e fontes utilizadas ao longo da pesquisa.
+2	REFERENCIAL TEÓRICO
+
+Educação Tradicional x Adaptativa: limites do modelo uniforme e potencial de personalização. A educação tradicional, marcada por métodos uniformes, não contempla as diferenças individuais entre os alunos. Em contrapartida, a aprendizagem adaptativa busca personalizar o ensino, conforme discutem D’Ambrosio (2012) e Holmes, Bialik e Fadel (2019).
+IA na Educação: fundamentos de redes neurais, aprendizado de máquina e análise de dados aplicados ao ensino. Holmes, Bialik e Fadel (2019) destacam que a educação será uma das áreas mais impactadas pela IA exigindo novas práticas pedagógicas.
+Sistemas Tutores Inteligentes:  segundo Alkhatlan e Kalita (2018), os Sistemas Tutores Inteligentes surgiram como uma tentativa de reproduzir computacionalmente a mediação do professor humano, evoluindo de modelos baseados em regras para arquiteturas que integram IA e análise de dados. Lin et al. (2023) acrescentam que tais sistemas favorecem a aprendizagem personalizada e sustentável, ao ajustar conteúdos e estratégias de acordo com o perfil de cada estudante. Já Zerkouk et al. (2025), em revisão recente, destacam os desafios atuais desses sistemas, como escalabilidade, privacidade e integração ética da IA. O projeto TitiaMathBot é um exemplo de tutor inteligente voltado para matemática, desenvolvido com IA e integrado ao Telegram. Embora voltado ao ensino fundamental, ele mostra como um chatbot pode ser usado para apoiar alunos com explicações e exercícios personalizados.
+Teorias de aprendizagem (Piaget e Vygotsky): as contribuições de Piaget (1999) e Vygotsky (2007) fundamentam a personalização proposta, ao reconhecer tanto os estágios cognitivos quanto a importância da interação social no processo de aprendizagem.
+Aprendizagem Adaptativa: conceito de personalização, variáveis (ritmo, motivação, estilo cognitivo) e exemplos de plataformas. Kay e Kumar (2020) apresentam uma revisão dos sistemas de aprendizagem adaptativa, apontando o potencial da IA em ajustar conteúdos de acordo com ritmo e motivação do estudante.
+Além disso, segundo o Center for Curriculum Redesign (Holmes; Bialik; Fadel, 2019), o ensino deve ir além do acúmulo de conteúdos, incorporando quatro dimensões essenciais: conhecimento, habilidades, caráter e meta-aprendizagem. Esse quadro amplia a noção de aprendizagem personalizada ao integrar competências cognitivas, socioemocionais e metacognitivas.
+O currículo, portanto, precisa ser constantemente atualizado, visto que grande parte do conhecimento factual se torna obsoleto em poucos anos. Mais relevante do que memorizar conteúdos passageiros é desenvolver compreensão de conceitos fundamentais e a capacidade de aplicá-los em novos contextos (Holmes; Bialik; Fadel, 2019).
+
+2.1	Trabalhos relacionados
+
+Esta seção apresenta uma análise comparativa dos principais trabalhos relacionados ao desenvolvimento de tutores inteligentes baseados em IA para o ensino de matemática, destacando as características distintivas de cada abordagem e como a presente pesquisa se diferencia desses estudos.
+Alkhatlan e Kalita (2018) realizaram uma revisão abrangente sobre Sistemas Tutores Inteligentes (STI), mapeando a evolução histórica desses sistemas desde modelos baseados em regras até arquiteturas modernas que integram IA e análise de dados. Os autores destacam que os STIs evoluíram para incorporar técnicas de aprendizado de máquina, permitindo maior adaptabilidade e personalização. Contudo, o trabalho apresenta uma abordagem mais generalista, focando em múltiplos domínios de conhecimento, enquanto a presente pesquisa concentra-se especificamente no ensino de matemática para o 2º ano do ensino médio, com ênfase em execução local e privacidade de dados.
+Lin et al. (2023) investigaram o uso de IA em Sistemas Tutores Inteligentes com foco em educação sustentável, analisando como essas tecnologias podem promover aprendizagem personalizada e sustentável. O estudo destaca a importância de ajustar conteúdos e estratégias de acordo com o perfil de cada estudante. A pesquisa atual diferencia-se por focar especificamente em modelos de linguagem (LLMs) executados localmente via Ollama, garantindo privacidade e acessibilidade em ambientes com recursos limitados, aspecto não abordado com profundidade no trabalho de Lin et al.
+Zerkouk et al. (2025) apresentaram uma revisão recente sobre tutores inteligentes baseados em IA destacando desafios como escalabilidade, privacidade e integração ética. Embora o trabalho aborde questões de privacidade, não especifica soluções técnicas para execução local, como a proposta atual com Ollama. A presente pesquisa diferencia-se ao propor uma arquitetura específica para execução local que elimina a dependência de servidores externos e garante controle total sobre os dados dos estudantes.
+O projeto TitiaMathBot representa uma implementação prática de tutor inteligente voltado para matemática, desenvolvido com IA e integrado ao Telegram. Embora demonstre viabilidade técnica, o projeto está voltado ao ensino fundamental e utiliza serviços em nuvem, diferentemente da presente proposta que visa o ensino médio e prioriza execução local para maior privacidade e controle.
+Kay e Kumar (2020) revisaram sistemas de aprendizagem adaptativa, apontando o potencial da IA em ajustar conteúdos de acordo com ritmo e motivação do estudante. O trabalho apresenta uma perspectiva ampla sobre adaptatividade, mas não explora especificamente a integração de múltiplos modelos de linguagem (LLaMA 3, Mistral, Phi-3) para otimizar diferentes aspectos da resposta pedagógica, como proposto na presente pesquisa.
+Holmes, Bialik e Fadel (2019) abordaram o uso de IA na educação de forma ampla, destacando que a educação será uma das áreas mais impactadas pela IA. O trabalho foca em implicações pedagógicas e políticas, mas não detalha implementações técnicas específicas. A pesquisa atual complementa essa perspectiva ao apresentar uma proposta técnica concreta de tutor adaptativo integrando fundamentos pedagógicos de Piaget e Vygotsky com modelos de linguagem modernos.
+A seguir, apresenta-se a Tabela 1, que apresenta uma comparação sistemática entre os principais trabalhos relacionados ao desenvolvimento de tutores inteligentes baseados em IA para o ensino de matemática e a presente pesquisa. A tabela organiza os estudos em sete dimensões principais: trabalho analisado, tipo de estudo, foco principal, abordagem técnica, domínio de aplicação, tipo de execução e os principais diferenciais da pesquisa atual em relação a cada estudo. Essa organização permite uma análise comparativa clara e didática, evidenciando como a presente pesquisa se posiciona no contexto da literatura existente e quais são suas contribuições específicas para o campo de tutores inteligentes adaptativos.
+
+
+
+
+Tabela 1 - Trabalhos relacionados
+
+Fonte: Autores, 2025
+
+3	METODOLOGIA
+
+3.1	Tipo de pesquisa
+
+O presente trabalho adota uma metodologia qualitativa e exploratória, orientada pela lógica do ciclo "ouvir, criar, implementar" proposta pela UNIVESP, complementada por princípios de pesquisa aplicada em ambientes educacionais mediados por tecnologias digitais. Segundo Gil (2008), a pesquisa exploratória visa proporcionar maior familiaridade com o problema, tornando-o mais explícito e permitindo a construção de hipóteses. A abordagem qualitativa, conforme Severino (2002), permite compreender os fenômenos em sua complexidade, valorizando a subjetividade e o contexto.
+
+3.2	Abordagem geral
+
+O objetivo central deste trabalho consiste em investigar, de forma aprofundada e experimental, as possibilidades e limitações de um tutor inteligente adaptativo fundamentado em modelos de linguagem de última geração (LLMs) no contexto do ensino médio. Busca-se não apenas avaliar a eficácia técnica da solução proposta, mas também compreender como suas características podem ser alinhadas com demandas pedagógicas atuais e questões éticas emergentes. A intenção é explorar em que medida a integração entre fundamentos teóricos da educação e avanços tecnológicos pode proporcionar experiências de aprendizagem mais personalizadas, seguras e contextualizadas, contribuindo para a evolução de práticas educacionais mediadas por IA. Dessa forma, pretende-se gerar subsídios teóricos e práticos para futuras implementações em larga escala, ampliando o debate sobre o papel dos tutores inteligentes adaptativos no cenário educacional brasileiro.
+
+3.3	Pesquisa bibliográfica sistemática
+
+A metodologia iniciou-se com uma pesquisa bibliográfica sistemática, seguindo protocolos de revisão de literatura científica. As buscas foram conduzidas nas seguintes bases de dados:
+•	IEEE Xplore Digital Library: para artigos técnicos sobre sistemas tutores inteligentes e IA aplicada à educação;
+•	SciELO (Scientific Electronic Library Online): para trabalhos brasileiros e latino-americanos sobre educação e tecnologia;
+•	Portal de Periódicos CAPES: para acesso a bases internacionais especializadas em educação e tecnologia.
+•	Artigos, teses, dissertações e livros sobre IA na educação, Sistemas Tutores Inteligentes ou aprendizagem adaptativa;
+•	Trabalhos que abordem ensino de matemática, personalização do ensino ou modelos de linguagem aplicados à educação;
+•	Publicações em português, inglês ou espanhol.
+•	Trabalhos que não abordem diretamente IA, tutores inteligentes ou educação adaptativa.
+Os temas foram pesquisados da seguinte forma:
+•	IA na Educação;
+•	Sistemas Tutores Inteligentes;
+•	Teorias de aprendizagem (Piaget e Vygotsky);
+•	Questões éticas, de privacidade e de equidade no uso de IA.
+
+3.4	Etapas iniciais da pesquisa e fundamentação teórica
+
+Etapa 1 – Busca inicial: utilização de termos-chave como "intelligent tutoring systems", "artificial intelligence in education", "adaptive learning", "tutor inteligente", "IA na educação", "aprendizagem adaptativa", considerando buscas com termos individuais e combinados.
+Etapa 2 – Triagem: leitura de títulos e resumos para identificar relevância, aplicando os critérios de inclusão e exclusão.
+Etapa 3 – Análise completa: leitura integral dos trabalhos selecionados, extração de informações relevantes e síntese para fundamentar o referencial teórico e a discussão dos resultados.
+Essas etapas visaram construir o fundamento conceitual do trabalho, a partir do qual foram elaborados rascunhos e hipóteses de projeto. Esses registros iniciais, anotações, diagramas conceituais e discussões internas constituíram a primeira entrega do grupo e orientaram a definição do tema final.
+
+3.5	Procedimentos de análise
+
+A análise dos dados coletados seguiu abordagem qualitativa, conforme orientações de Bardin (2016) sobre análise de conteúdo. As respostas dos questionários foram categorizadas e analisadas para identificar padrões relacionados a clareza, usabilidade, relevância e tempo de resposta. As observações durante os testes foram registradas e analisadas de forma descritiva, correlacionando-se com os fundamentos teóricos estudados. Para os estudos de caso, seguiu-se a abordagem proposta por Yin (2015), focando na análise detalhada de situações específicas para validar conceitos e identificar padrões de comportamento do sistema.
+
+3.6	Abordagem metodológica pedagógica
+
+Apesar de não ter adotado formalmente uma metodologia pedagógica completa, o grupo fundamentou suas decisões e reflexões nas teorias construtivistas e sociointeracionistas de Piaget e Vygotsky. Esses referenciais teóricos direcionaram as discussões sobre a mediação da aprendizagem pelo tutor inteligente, o protagonismo do estudante, a motivação, o engajamento e a personalização do conteúdo, além dos riscos éticos relacionados à privacidade e ao uso da IA.
+Tais reflexões foram incorporadas ao processo metodológico como uma fase exploratória, buscando alinhar a teoria à prática e às questões atuais sobre IA na educação. Assim, ética, privacidade, motivação e equidade foram consideradas elementos fundamentais da abordagem adotada, representando a aplicação concreta dos princípios de aprendizagem e dos debates contemporâneos sobre o impacto da inteligência artificial na formação humana.
+
+3.7	Metodologia técnica e experimental
+
+Considerando as restrições de tempo e recursos disponíveis, foi adotada uma abordagem experimental enxuta para validar a viabilidade técnica e conceitual de um tutor adaptativo local. A implementação ocorreu por meio de um modelo de linguagem local (LLM) executado com Ollama, instalado em um computador pessoal de um dos participantes do grupo do TCC.
+O processo metodológico envolveu a instalação do Ollama3 seguido pela elaboração de prompts que simularam interações entre aluno e tutor. As respostas geradas foram analisadas quanto à coerência, capacidade de adaptação e adequação pedagógica. Em seguida, os resultados foram discutidos entre os membros do grupo, buscando conexão com os referenciais teóricos previamente estudados.
+Essa estratégia permitiu explorar, de forma prática e fundamentada, os aspectos centrais do conceito de tutor adaptativo, respeitando as limitações impostas pelo contexto do trabalho e contribuindo para uma reflexão crítica alinhada às discussões sobre IA na educação.
+
+3.8	Limitações e justificativas
+
+A opção por direcionar o Trabalho de Conclusão de Curso (TCC) para análises teóricas, complementadas por um teste prático de escopo restrito, foi fundamentada em diversos fatores cruciais para o desenvolvimento do projeto. Entre eles, destacam-se a limitação de recursos financeiros e a inexistência de infraestrutura dedicada, assim como o tempo reduzido disponível para execução. Além disso, o foco principal do trabalho está em validar o conceito de tutor adaptativo, sem a intenção de entregar um produto final acabado.
+Essa abordagem evidencia o caráter exploratório e formativo deste TCC, priorizando a reflexão crítica sobre as possibilidades da tecnologia educacional e promovendo a construção de conhecimento interdisciplinar. O objetivo, portanto, é contribuir para o debate teórico e metodológico sobre tutores adaptativos, justificando a escolha por metodologias que favorecem a análise conceitual e a experimentação limitada, em vez do desenvolvimento pleno de soluções tecnológicas.
+ 
+3.9	Síntese da metodologia
+
+A seguir, apresenta-se a Tabela 2, que sintetiza as principais etapas da metodologia utilizada na presente pesquisa, organizando-as de forma sistemática segundo sua natureza, objetivo e resultado esperado. A tabela apresenta cinco etapas metodológicas principais: pesquisa bibliográfica, discussões e rascunhos, estudo pedagógico, experimento com Ollama e reflexão final, demonstrando como cada fase contribuiu para a construção do trabalho e permitindo uma visão clara e organizada do processo metodológico adotado.
+
+Tabela 2 – Síntese da metodologia utilizada
+Etapa	Natureza	Objetivo	Resultado esperado
+Pesquisa bibliográfica	Teórica	Levantar fundamentos sobre IA na educação e teorias de aprendizagem	Estrutura conceitual e justificativa do tema
+Discussões e rascunhos	Reflexiva	Construir hipóteses e definir escopo do tutor adaptativo	Primeira entrega (projeto conceitual)
+Estudo pedagógico	Analítica	Relacionar Piaget e Vygotsky às preocupações éticas e de motivação	Enquadramento teórico-pedagógico
+Experimento com Ollama	Técnica	Testar viabilidade e comportamento de um LLM local	Relato técnico e análise qualitativa
+Reflexão final	Síntese	Integrar resultados teóricos e práticos	Discussão conclusiva do TCC
+
+Fonte: Autores, 2025
+ 
+4	DESENVOLVIMENTO
+
+4.1	Etapas do desenvolvimento de sistemas
+
+O desenvolvimento do tutor inteligente adaptativo proposto foi estruturado em etapas, seguindo um modelo incremental, que permite a análise e validação progressiva das funcionalidades, conforme destacado por Medeiros e Freitas (2023), ao abordar as vantagens desse modelo em projetos que exigem entregas de alta qualidade e acompanhamento contínuo do progresso. O foco do projeto é a criação de um sistema de apoio ao ensino de matemática para o 2º ano do ensino médio, utilizando modelos de linguagem executados localmente por meio do Ollama. Essa abordagem garante privacidade, acessibilidade e baixo custo operacional.
+As etapas de desenvolvimento foram definidas da seguinte forma:
+
+4.1.1	Análise de requisitos:
+
+  Nesta etapa, foram estudados referenciais teóricos, normas e documentos pedagógicos sobre o ensino de matemática no ensino médio e sobre o uso de inteligência artificial na educação. A partir dessa pesquisa, foram definidos requisitos como:
+•	Personalização das respostas de acordo com o perfil do estudante;
+•	Facilidade de uso e interface intuitiva;
+•	Execução local do modelo de IA para garantir privacidade dos dados;
+•	 Suporte à customização de conteúdos por parte do docente;
+•	Operação em ambientes com baixa conectividade à internet.
+
+4.1.2	Escolha das tecnologias:
+
+ Foram avaliados frameworks e ferramentas capazes de atender aos requisitos levantados, como Flask ou Streamlit para a interface web e a API local do Ollama (http://localhost:11434/api/generate) para processamento dos modelos IA LLaMA 3, Mistral, Phi-3, entre outros.
+
+4.1.3	Implementação do protótipo:
+
+ O protótipo foi desenvolvido para validar as principais funcionalidades do sistema, incluindo seleção do modelo de IA, customização de conteúdos didáticos e interação simulada com o usuário.
+ As imagens apresentadas neste trabalho representam o protótipo desenvolvido, ilustrando a interface web e os fluxos básicos de interação do usuário.
+
+4.1.4	Ajustes e refinamento de prompts:
+
+ Foram realizados testes internos e refinamentos nos prompts utilizados pelo tutor, visando aprimorar a adequação das respostas ao contexto matemático e ao currículo escolar.
+
+4.1.5	Testes de desempenho e usabilidade:
+
+ O sistema foi avaliado quanto ao tempo de resposta, estabilidade e experiência de navegação, com base em análise técnica e simulação dos fluxos de interação típicos.
+O sistema será composto por uma interface web (baseada em Flask ou Streamlit) que se comunica com o Ollama através da API local. O usuário poderá escolher o modelo de IA desejado e interagir com o tutor em um ambiente educacional seguro e personalizável.
+
+4.2	Vantagens do Uso com Ollama:
+
+•	Privacidade e controle local: os dados permanecem no próprio ambiente, sem envio para servidores externos.
+•	Customização: o tutor pode ser ajustado para conteúdos específicos do currículo ou da instituição.
+•	Acessibilidade: funcionamento garantido mesmo em ambientes com acesso limitado à internet.
+•	Integração com plataformas existentes: possibilidade de integração com sistemas como Moodle, Telegram ou interfaces web simples.
+
+4.3	Arquitetura Conceitual do Tutor Inteligente
+
+A arquitetura do tutor inteligente proposto foi estruturada com base no conceito de Sistemas Tutores Inteligentes (STI), que utilizam modelos computacionais para representar tanto o conhecimento do domínio quanto o perfil do estudante. Nesta proposta, o tutor é organizado em quatro módulos principais: (a) Modelo do Estudante; (b) Modelo Pedagógico; (c) Base de Conteúdos; e (d) Motor de Geração de Respostas baseado em IA. Essa arquitetura permite que o tutor adapte o nível de explicação, dificuldade dos exercícios e profundidade conceitual conforme o desempenho e progresso do aluno.
+
+4.4	Estrutura dos Módulos do Sistema
+
+a) Modelo do Estudante
+Este módulo acompanha o progresso do aluno, registrando dúvidas frequentes, erros recorrentes, tempo de resposta e tipos de mediações que melhor favorecem sua compreensão. As informações são atualizadas continuamente a cada interação com o tutor, permitindo a adaptação do conteúdo de forma personalizada.
+
+b) Modelo Pedagógico
+Corresponde às estratégias de ensino que orientam o tutor na escolha das explicações. É fundamentado em princípios construtivistas de Piaget (1999) e sociointeracionistas de Vygotsky (2007), que defendem que a aprendizagem ocorre de forma ativa e socialmente mediada.
+
+c) Base de Conteúdos
+É composta por materiais de Matemática do 2º ano do Ensino Médio, incluindo exercícios, definições conceituais, exemplos resolvidos e problemas contextualizados. Essa base foi organizada a partir de materiais públicos e referenciais didáticos amplamente aceitos.
+
+d) Motor de Geração de Respostas (IA)
+O motor de respostas utiliza modelos de linguagem executados localmente via Ollama. Os modelos selecionados, como LLaMA 3, Mistral e Phi-3, foram avaliados quanto à capacidade de gerar explicações pedagógicas, clareza e adequação linguística. A execução local garante privacidade e controle dos dados dos estudantes.
+
+4.5	Fluxo de Interação Tutor-Aluno
+
+O funcionamento do tutor ocorre por meio de ciclos de interação. O aluno envia uma dúvida ou solicita uma explicação. O sistema identifica o perfil do usuário, seleciona o conteúdo adequado na base de conhecimento e o motor de IA gera a explicação adequada. A resposta é avaliada pelo estudante, e o sistema atualiza automaticamente o Modelo do Estudante, permitindo adaptação em tempo real.
+
+4.6	Exemplo de Personalização na Prática
+
+Durante os testes, foi solicitado ao tutor que explicasse Funções do Segundo Grau. Para estudantes com maior dificuldade, o tutor utilizou exemplos visuais, explicações passo a passo e comparações com situações do cotidiano. Já para estudantes com domínio intermediário, foram propostos desafios com grau de complexidade progressivo, reforçando a autonomia do aluno.
+
+4.7	Registro Visual do Protótipo
+
+As imagens apresentadas na seção de resultados correspondem ao protótipo funcional utilizado durante os testes. Cada figura está acompanhada de título e fonte conforme normas acadêmicas.
+A seguir, apresenta-se a Figura 1, que ilustra a tela inicial do protótipo desenvolvido, onde o usuário pode selecionar o modelo de Inteligência Artificial desejado para interação. Essa interface foi projetada com foco na simplicidade e usabilidade, permitindo uma navegação intuitiva e rápida, facilitando a comparação entre os diferentes modelos de IA utilizados durante os testes.
+
+Figura 1 – Menu para seleção de modelo de IA desejado.
+
+Fonte: Autores, 2025
+
+4.8	Coleta de dados e/ou pesquisa de campo
+
+A coleta de dados foi conduzida em duas etapas: documental e prática. Na primeira, foram selecionados conteúdos de matemática do 2º ano do ensino médio, incluindo apostilas, simulados e exercícios públicos. Esses materiais serviram de base para avaliar a capacidade dos modelos de IA em compreender, sintetizar e gerar explicações coerentes.
+Na etapa prática, foram convidados dez estudantes de perfis distintos para testar a ferramenta. Durante as interações, os usuários responderam a questionários de avaliação que mensuraram clareza, usabilidade, relevância e tempo de resposta do sistema. As observações foram analisadas qualitativamente, destacando os pontos de melhoria e desempenho.
+Na sequência, a Figura 2 apresenta um exemplo de interação entre o usuário e o protótipo, utilizando o modelo Phi-3. Essa imagem demonstra o funcionamento prático da aplicação, evidenciando a estrutura de perguntas e respostas e o comportamento textual do modelo ao gerar explicações.
+
+Figura 2 - Exemplo de interação com o software no model phi3
+
+Fonte: Autores, 2025
+
+4.9	Estudo de casos
+
+Para validar o funcionamento conceitual do tutor adaptativo, foram conduzidos três estudos de caso: (1) explicação de funções do 2º grau; (2) resolução de problemas de geometria plana; e (3) revisão de conteúdos de álgebra. Em cada cenário, o Ollama foi utilizado com diferentes modelos para avaliar consistência, clareza e adaptabilidade.
+Os resultados mostraram que modelos como Phi-3 e Mistral são mais eficazes em respostas curtas e diretas, enquanto o LLaMA 3 oferece explicações mais detalhadas e contextualizadas. A combinação desses modelos pode aprimorar o desempenho geral do tutor, equilibrando velocidade e profundidade de resposta.
+Durante os testes, também foi avaliado o desempenho do modelo Mistral, especialmente em tarefas que exigiam respostas diretas e objetivas. A Figura 3 apresenta a interface do tutor inteligente durante uma dessas interações, evidenciando a clareza do layout e a estruturação do conteúdo gerado. Observa-se que o modelo manteve uma comunicação concisa, adequada para perguntas de natureza prática e resolução de problemas matemáticos.
+
+Figura 3 - Interface do tutor inteligente model mistral
+
+Fonte: Autores, 2025
+5	RESULTADOS E DISCUSSÃO
+
+5.1	Apresentação dos dados
+
+Os resultados dos testes com usuários mostraram boa aceitação e desempenho satisfatório do tutor inteligente. As médias gerais das avaliações variaram entre 4,2 e 4,8 em uma escala de 0 a 5.
+A Figura 4 apresenta o gráfico de barras que ilustra as médias atribuídas pelos participantes aos critérios de clareza, facilidade, relevância, tempo de resposta e confiança, permitindo uma interpretação objetiva do nível de satisfação observado.
+
+Figura 4 - Avaliação dos critérios de desempenho do tutor inteligente.
+
+Fonte: Autores, 2025
+
+ 
+Figura 5 - Nível de satisfação geral dos usuários.
+
+Fonte: Autores, 2025
+
+Os resultados demonstram a viabilidade do uso de modelos de IA locais como o Ollama para fins educacionais. As vantagens observadas incluem privacidade dos dados, custo reduzido e flexibilidade na escolha de modelos. Os usuários destacaram o potencial do sistema em reforçar o aprendizado e oferecer explicações personalizadas.
+
+6	CONCLUSÃO
+
+A integração da IA ao ensino de matemática a alunos do 2º ano do ensino médio representa uma oportunidade valiosa para inovar práticas pedagógicas e enfrentar os desafios que marcam o cotidiano escolar. Ao ser utilizada como ferramenta pelo educador, a IA não apenas amplia o acesso a recursos didáticos mais sofisticados, como também potencializa significativamente a personalização do ensino, o engajamento dos alunos e a eficácia das avaliações. De início, há um aprimoramento nas técnicas de ensino.
+No contexto do 2º ano do ensino médio, em que os conteúdos se tornam mais abstratos e exigem maior capacidade de interpretação e raciocínio lógico, a IA pode atuar como uma ponte entre o conhecimento formal e a realidade dos estudantes. A introdução de ferramentas inteligentes permite visualizar conceitos complexos, acompanhar o progresso dos alunos em tempo real e adaptar estratégias de ensino às necessidades individuais.
+Contudo, para que essa transformação seja efetiva, é necessário investir na formação continuada dos professores, na infraestrutura tecnológica das escolas e em políticas educacionais que promovam o uso ético, seguro e pedagógico da IA proporcionando a melhor forma de ensino possível ao aluno. A tecnologia, quando aliada ao olhar humano e à intencionalidade pedagógica, tem o potencial de tornar o ensino de matemática mais inclusivo, significativo e conectado com os desafios do século XXI.
+
+7	REFERÊNCIAS
+
+ALKHATLAN, A.; KALITA, J. Intelligent Tutoring Systems: A Comprehensive Historical Survey with Recent Developments. arXiv preprint arXiv:1812.09628, 2018. Disponível em: https://arxiv.org/pdf/1812.09628. Acesso em: 23 out. 2025.
+BARDIN, L. Análise de conteúdo. Lisboa: Edições 70, 2016.
+D’AMBRÓSIO, U. Educação Matemática: da teoria à prática. Campinas: Papirus, 2012.
+GIL, A. C. Métodos e técnicas de pesquisa social. 6. ed. São Paulo: Atlas, 2008.
+HOLMES, W.; BIALIK, M.; FADEL, C. Artificial Intelligence in Education: Promise and Implications for Teaching and Learning. Boston: Center for Curriculum Redesign, 2019. Disponível em: https://www.researchgate.net/publication/332180327_Artificial_Intelligence_in_Education_Promise_and_Implications_for_Teaching_and_Learning. Acesso em: 23 out. 2025.
+HOSTINGER. What is Ollama?. Disponível em: https://www.hostinger.com/tutorials/what-is-ollama. Acesso em: 23 out. 2025.
+INEP – Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira. Resumo Técnico do Saeb 2023: Resultados da Educação Básica. Brasília: INEP, 2024. Disponível em: https://www.gov.br/inep/pt-br. Acesso em: 23 out. 2025.
+KAY, D.; KUMAR, V. Adaptive Learning Systems: A Review. International Journal of Artificial Intelligence in Education, 2020. Disponível em: https://www.researchgate.net/publication/376298332_Adaptive_Learning_Using_Artificial_Intelligence_in_e-Learning_A_Literature_Review/link/6815675bbd3f1930dd6b8f54/download. Acesso em: 23 out. 2025.
+LIN, C. C. et al. Artificial Intelligence in Intelligent Tutoring Systems Toward Sustainable Education. Smart Learning Environments, v. 10, n. 1, 2023. Disponível em: https://slejournal.springeropen.com/articles/10.1186/s40561-023-00260-y. Acesso em: 23 out. 2025.
+MEDEIROS, C. A.; FREITAS, J. V. O modelo incremental no desenvolvimento de software. Research, Society and Development, v. 12, n. 4, p. e7512440934, 2023. DOI: 10.33448/rsd-v12i4.40934. Disponível em: https://rsdjournal.org/rsd/article/view/40934. Acesso em: 03 nov. 2025.
+META AI. LLaMA 3 Model Card. 2024. Disponível em: https://ai.meta.com/llama/. Acesso em: 23 out. 2025.
+MICROSOFT RESEARCH. Phi-3 Technical Overview. 2024. Disponível em: https://www.microsoft.com/en-us/research/publication/phi-3-technical-overview/. Acesso em: 23 out. 2025.
+OBSERVATÓRIO DE EDUCAÇÃO – INSTITUTO UNIBANCO. Inteligência Artificial na Educação. 2024. Disponível em: https://observatoriodeeducacao.institutounibanco.org.br/em-debate/inteligencia-artificial-na-educacao. Acesso em: 23 out. 2025.
+OECD Organisation for Economic Co-operation and Development. Digital Education Outlook 2021: Pushing the Frontiers with Artificial Intelligence, Blockchain and Robots. Paris: OECD Publishing, 2021. Disponível em: https://doi.org/10.1787/589b283f-en. Acesso em: 23 out. 2025.
+OECD. OECD – Organisation for Economic Co-operation and Development. PISA 2022 Results (Volume I): The State of Learning Outcomes. Paris: OECD Publishing, 2023. Disponível em: https://doi.org/10.1787/69096873-en. Acesso em: 23 out. 2025.
+OLLAMA. Ollama Documentation. Disponível em: https://ollama.ai/library. Acesso em: 23 out. 2025.
+ORGANIZAÇÃO DAS NAÇÕES UNIDAS PARA A EDUCAÇÃO, A CIÊNCIA E A CULTURA – UNESCO. AI and Education: Guidance for Policy-Makers. Paris: UNESCO, 2023. Disponível em: https://unesdoc.unesco.org/ark:/48223/pf0000376709. Acesso em: 23 out. 2025.
+PIAGET, J. A psicologia da criança. Rio de Janeiro: Bertrand Brasil, 1999.
+PRESSMAN, R. S. Engenharia de Software: uma abordagem profissional. 9. ed. São Paulo: McGraw-Hill, 2021.
+SEVERINO, A. J. Metodologia do trabalho científico. 24. ed. São Paulo: Cortez, 2002.
+THE MISTRAL TEAM. Mistral 7B Technical Report. 2023. Disponível em: https://mistral.ai/news/mistral-7b/. Acesso em: 23 out. 2025.
+TUTORMUNDI. Tutor com Inteligência Artificial. 2024. Disponível em: https://tutormundi.com/blog/tutor-inteligencia-artificial/. Acesso em: 23 out. 2025.
+VYGOTSKY, L. A formação social da mente. São Paulo: Martins Fontes, 2007.
+YIN, R. K. Estudo de caso: planejamento e métodos. 6. ed. Porto Alegre: Bookman, 2015.
+ZERKOUK, M. et al. A Comprehensive Review of AI-Based Intelligent Tutoring Systems. arXiv preprint arXiv:2507.18882, 2025. Disponível em: https://arxiv.org/pdf/2507.18882. Acesso em: 23 out. 2025.
+8	APÊNDICE A - QUESTIONÁRIO DE AVALIAÇÃO DO TUTOR INTELIGENTE

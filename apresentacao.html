@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação TCC - Tutor Inteligente Adaptativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 50px 60px 100px 60px;
+            animation: fadeIn 0.8s ease-in-out;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slide de Capa */
+        .cover-slide {
+            background: url('fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            padding: 30px 40px 80px 40px;
+            position: relative;
+        }
+
+        .cover-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.75) 0%, rgba(118, 75, 162, 0.75) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cover-slide > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .cover-slide h1 {
+            font-size: clamp(1.5em, 4vw, 2.2em);
+            margin-bottom: 15px;
+            animation: slideDown 1s ease-out 0.3s both;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .cover-slide h2 {
+            font-size: clamp(1.3em, 3vw, 1.6em);
+            margin-bottom: 20px;
+            font-weight: 300;
+            animation: slideDown 1s ease-out 0.5s both;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0 0 8px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .cover-slide .subtitle {
+            font-size: clamp(1em, 2.5vw, 1.2em);
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-out 0.7s both;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            line-height: 1.3;
+        }
+
+        .cover-slide .work-title {
+            font-size: clamp(1.2em, 2.8vw, 1.5em);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+            animation: slideDown 1s ease-out 0.7s both;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .authors {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            max-width: 900px;
+            width: 100%;
+            margin: 10px 0;
+            animation: slideUp 1s ease-out 0.9s both;
+        }
+
+        .author {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: clamp(0.85em, 1.5vw, 1em);
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .author-ra {
+            font-size: clamp(0.75em, 1.3vw, 0.85em);
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .orientador {
+            margin-top: 15px;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+            animation: slideUp 1s ease-out 1.1s both;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        .date {
+            margin-top: 10px;
+            font-size: clamp(0.85em, 1.8vw, 1em);
+            opacity: 0.95;
+            animation: slideUp 1s ease-out 1.3s both;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slides de conteúdo */
+        .content-slide {
+            background: url('fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content-slide > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-slide h2 {
+            font-size: clamp(1.6em, 3.5vw, 2em);
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: slideDown 0.6s ease-out;
+            padding-top: 10px;
+            flex-shrink: 0;
+        }
+
+        .content-slide .content {
+            max-width: 1100px;
+            width: 100%;
+            font-size: clamp(0.9em, 1.8vw, 1.1em);
+            line-height: 1.4;
+            text-align: left;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-right: 10px;
+        }
+
+        .content-slide .content p {
+            margin: 10px 0;
+            font-size: clamp(0.9em, 1.8vw, 1.1em);
+            line-height: 1.5;
+        }
+
+        .content-slide .content p strong {
+            font-size: clamp(0.95em, 1.9vw, 1.15em);
+        }
+
+        .content-slide ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content-slide li {
+            margin: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            animation: slideLeft 0.6s ease-out both;
+            line-height: 1.4;
+            font-size: clamp(0.85em, 1.7vw, 1.05em);
+        }
+
+        .content-slide li:nth-child(1) { animation-delay: 0.2s; }
+        .content-slide li:nth-child(2) { animation-delay: 0.4s; }
+        .content-slide li:nth-child(3) { animation-delay: 0.6s; }
+        .content-slide li:nth-child(4) { animation-delay: 0.8s; }
+        .content-slide li:nth-child(5) { animation-delay: 1s; }
+        .content-slide li:nth-child(6) { animation-delay: 1.2s; }
+
+        .content-slide li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Navegação */
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-btn:active {
+            transform: translateY(0);
+        }
+
+        .slide-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(102, 126, 234, 0.95);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            animation: scaleIn 0.6s ease-out both;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .stat-box:nth-child(1) { animation-delay: 0.2s; }
+        .stat-box:nth-child(2) { animation-delay: 0.4s; }
+
+        .stat-number {
+            font-size: clamp(2em, 4vw, 2.5em);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: clamp(0.9em, 1.8vw, 1.1em);
+            line-height: 1.3;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .image-container img {
+            max-width: 90%;
+            max-height: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .image-caption {
+            font-size: clamp(0.8em, 1.5vw, 0.95em);
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .images-grid img {
+            max-width: 100%;
+            max-height: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .images-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .single-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .single-image img {
+            max-width: 85%;
+            max-height: 450px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .single-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Modal para expandir imagens */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .image-modal-close:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .presenter-header {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            background: rgba(102, 126, 234, 0.95);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: clamp(0.85em, 1.5vw, 1em);
+            font-weight: 600;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .presenter-header .presenter-name {
+            font-size: clamp(0.9em, 1.6vw, 1.1em);
+            margin-bottom: 3px;
+        }
+
+        .presenter-header .presenter-ra {
+            font-size: clamp(0.75em, 1.3vw, 0.85em);
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Capa -->
+        <div class="slide cover-slide active">
+            <h1>UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO</h1>
+            <h2>UNIVESP</h2>
+            <div class="subtitle">Bacharel em Engenharia da Computação</div>
+
+            <div class="authors">
+                <div class="author">
+                    <div class="author-name">Brenno Calderan Brossi</div>
+                    <div class="author-ra">RA: 221084</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Camila Cristina Paiva Vieira</div>
+                    <div class="author-ra">RA: 2101658</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Eder Clauber dos Santos dos Anjos</div>
+                    <div class="author-ra">RA: 1806662</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Franklin Leandro Martins</div>
+                    <div class="author-ra">RA: 1401068</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Gabriel Henrique Souza Ribeiro</div>
+                    <div class="author-ra">RA: 2213730</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Julio Anderson Guimarães Leite</div>
+                    <div class="author-ra">RA: 2104217</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Tiago Prado Moreira</div>
+                    <div class="author-ra">RA: 2109577</div>
+                </div>
+                <div class="author">
+                    <div class="author-name">Vera Lucia de Oliveira Silverio</div>
+                    <div class="author-ra">RA: 2231483</div>
+                </div>
+            </div>
+
+            <div class="work-title">
+                Tutor Inteligente e Adaptativo em Inteligência Artificial<br>
+                para Personalização do Ensino de Matemática<br>
+                no 2º Ano do Ensino Médio
+            </div>
+
+            <div class="orientador">
+                <strong>Orientador:</strong> Prof. Alex Sandro Rodrigues Ancioto
+            </div>
+
+            <div class="date">São Paulo - SP | 2025</div>
+        </div>
+
+        <!-- Slide 2: Contextualização -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Brenno Calderan Brossi</div>
+                <div class="presenter-ra">RA: 221084</div>
+            </div>
+            <h2>Contextualização</h2>
+            <div class="content">
+                <p><strong>Realidade do Ensino de Matemática no Brasil:</strong></p>
+                <ul>
+                    <li>Sistema de Avaliação da Educação Básica (SAEB) indica <span class="highlight">baixos índices de proficiência</span> em Matemática no Ensino Médio (INEP, 2023)</li>
+                    <li>Resultados do PISA mostram que o <span class="highlight">desempenho brasileiro está abaixo da média</span> dos países da OECD em Matemática (OECD, 2023)</li>
+                    <li>Metodologias tradicionais <span class="highlight">uniformizam o ensino</span>, não considerando ritmos e estilos individuais de aprendizagem</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Oportunidade com IA:</strong></p>
+                <ul>
+                    <li>IA surge como <span class="highlight">alternativa promissora</span> para personalização do ensino</li>
+                    <li>UNESCO (2023) destaca potencial para <span class="highlight">reduzir desigualdades</span> e ampliar acesso a recursos educacionais</li>
+                    <li>Especialmente relevante em <span class="highlight">escolas públicas e contextos de vulnerabilidade</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 3: Problema de Pesquisa -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Camila Cristina Paiva Vieira</div>
+                <div class="presenter-ra">RA: 2101658</div>
+            </div>
+            <h2>Problema de Pesquisa</h2>
+            <div class="content">
+                <p style="font-size: 1.2em; margin-bottom: 20px; font-weight: 600; color: #667eea;">
+                    <strong>Questão Central:</strong>
+                </p>
+                <p style="font-size: 1.1em; margin-bottom: 25px; line-height: 1.4;">
+                    Como desenvolver um tutor inteligente, baseado em IA, capaz de personalizar o ensino de Matemática para estudantes do Ensino Médio, considerando princípios éticos, pedagógicos e de acessibilidade?
+                </p>
+                <p><strong>Desafios Identificados:</strong></p>
+                <ul>
+                    <li>Educação tradicional <span class="highlight">não atende diferenças individuais</span> de ritmo e compreensão (Piaget, 1999; Vygotsky, 2007)</li>
+                    <li><span class="highlight">Dificuldades persistentes</span> em Matemática comprometem desempenho ao longo da vida escolar</li>
+                    <li>INEP (2023) mostra índices de proficiência <span class="highlight">entre os mais baixos</span> da educação básica</li>
+                    <li>Necessidade de <span class="highlight">abordagens flexíveis e individualizadas</span> que se adaptem a cada estudante</li>
+                    <li>IA pode promover <span class="highlight">experiências adaptativas</span> que ampliem engajamento e autonomia (Holmes, Bialik e Fadel, 2019)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: Justificativa -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Eder Clauber dos Santos dos Anjos</div>
+                <div class="presenter-ra">RA: 1806662</div>
+            </div>
+            <h2>Justificativa</h2>
+            <div class="content">
+                <p><strong>Relevância em Quatro Dimensões:</strong></p>
+                <ul>
+                    <li><span class="highlight">Pessoal:</span> Surgiu de reflexões próprias registradas em mapas mentais e anotações, buscando conferir <span class="highlight">originalidade à proposta</span></li>
+                    <li><span class="highlight">Acadêmica:</span> Contribui com pesquisas sobre Sistemas Tutores Inteligentes e aprendizagem adaptativa, promovendo interação entre <span class="highlight">engenharia da computação e psicologia educacional</span></li>
+                    <li><span class="highlight">Profissional:</span> Aplicável em <span class="highlight">plataformas digitais e cursos preparatórios</span>, reforçando vínculo entre teoria e prática</li>
+                    <li><span class="highlight">Social:</span> Ampliar acesso a ferramentas de ensino personalizado, especialmente em <span class="highlight">contextos de vulnerabilidade</span>. IA como apoio ao professor, <span class="highlight">não substituição</span> do papel humano</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Dados que reforçam a necessidade:</strong></p>
+                <ul>
+                    <li>Matemática apresenta <span class="highlight">elevados índices de reprovação e evasão</span> no Ensino Médio (INEP, 2023)</li>
+                    <li>UNESCO (2023) destaca potencial da IA para <span class="highlight">reduzir desigualdades de aprendizado</span></li>
+                    <li>OECD (2021) ressalta necessidade de <span class="highlight">políticas claras para proteção de dados e ética</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: Objetivos -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Franklin Leandro Martins</div>
+                <div class="presenter-ra">RA: 1401068</div>
+            </div>
+            <h2>Objetivos</h2>
+            <div class="content">
+                <p style="font-size: 1.2em; margin-bottom: 15px; color: #667eea; font-weight: 600;">
+                    <strong>Objetivo Geral:</strong>
+                </p>
+                <p style="margin-bottom: 25px; font-size: 1.1em; line-height: 1.5;">
+                    Propor e descrever um modelo teórico de tutor inteligente e adaptativo, baseado em IA com foco na personalização do ensino de matemática no segundo ano do ensino médio.
+                </p>
+                <p style="font-size: 1.2em; margin-bottom: 15px; color: #667eea; font-weight: 600;">
+                    <strong>Objetivos Específicos:</strong>
+                </p>
+                <ul>
+                    <li><span class="highlight">Mapear e analisar</span> técnicas de IA aplicáveis à personalização do ensino com ênfase em aprendizagem adaptativa</li>
+                    <li><span class="highlight">Integrar fundamentos pedagógicos</span> (Piaget, 1999 e Vygotsky, 2007) à modelagem do tutor, destacando relevância no ensino de matemática</li>
+                    <li><span class="highlight">Definir requisitos e personas</span> representativas de estudantes do 2º ano do ensino médio considerando perfil de estudos, motivação e contexto socioeconômico</li>
+                    <li><span class="highlight">Estruturar arquitetura conceitual</span> de tutor adaptativo (fluxos de interação, funcionalidades e possíveis interfaces)</li>
+                    <li><span class="highlight">Discutir vantagens, limitações e riscos</span> do modelo: mau uso, dependência, viabilidade técnica e pedagógica</li>
+                    <li><span class="highlight">Produzir estudo crítico</span> que contribua para engenharia da computação aplicada à educação</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6: Metodologia -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Julio Anderson Guimarães Leite</div>
+                <div class="presenter-ra">RA: 2104217</div>
+            </div>
+            <h2>Metodologia</h2>
+            <div class="content">
+                <p><strong>Tipo de Pesquisa:</strong></p>
+                <ul>
+                    <li><span class="highlight">Qualitativa e exploratória</span>, orientada pelo ciclo "ouvir, criar, implementar" (UNIVESP)</li>
+                    <li>Segundo Gil (2008): proporciona <span class="highlight">maior familiaridade com o problema</span> e construção de hipóteses</li>
+                    <li>Abordagem qualitativa permite compreender fenômenos em sua <span class="highlight">complexidade e contexto</span> (Severino, 2002)</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Revisão Bibliográfica Sistemática:</strong></p>
+                <ul>
+                    <li><span class="highlight">IEEE Xplore Digital Library:</span> artigos técnicos sobre STIs e IA na educação</li>
+                    <li><span class="highlight">SciELO:</span> trabalhos brasileiros e latino-americanos sobre educação e tecnologia</li>
+                    <li><span class="highlight">Portal CAPES:</span> acesso a bases internacionais especializadas</li>
+                    <li>Termos pesquisados: "intelligent tutoring systems", "adaptive learning", "IA na educação", "tutor inteligente"</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Fundamentação e Experimentação:</strong></p>
+                <ul>
+                    <li><span class="highlight">Fundamentos Pedagógicos:</span> Piaget (1999) - estágios cognitivos; Vygotsky (2007) - interação social</li>
+                    <li><span class="highlight">Experimentação Prática:</span> Modelos LLM (LLaMA 3, Mistral, Phi-3) executados localmente via Ollama</li>
+                    <li><span class="highlight">Testes com Usuários:</span> 10 estudantes testaram o protótipo com questionários de avaliação</li>
+                    <li><span class="highlight">Análise:</span> Qualitativa (Bardin, 2016) focando clareza, usabilidade, relevância e adequação pedagógica</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7: Arquitetura do Sistema -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Gabriel Henrique Souza Ribeiro</div>
+                <div class="presenter-ra">RA: 2213730</div>
+            </div>
+            <h2>Arquitetura do Tutor Inteligente</h2>
+            <div class="content">
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Módulos Principais</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Modelos de IA Testados</div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px;"><strong>Estrutura dos Módulos:</strong></p>
+                <ul>
+                    <li><span class="highlight">Modelo do Estudante:</span> Acompanha progresso, registra dúvidas frequentes, erros recorrentes, tempo de resposta e tipos de mediações que melhor favorecem compreensão. <span class="highlight">Atualizado continuamente</span> a cada interação</li>
+                    <li><span class="highlight">Modelo Pedagógico:</span> Estratégias de ensino fundamentadas em <span class="highlight">Piaget (construtivismo) e Vygotsky (sociointeracionismo)</span>. Orienta escolha de explicações adequadas ao nível cognitivo</li>
+                    <li><span class="highlight">Base de Conteúdos:</span> Materiais de Matemática do 2º ano do Ensino Médio: <span class="highlight">exercícios, definições conceituais, exemplos resolvidos e problemas contextualizados</span>. Organizados a partir de materiais públicos e referenciais didáticos</li>
+                    <li><span class="highlight">Motor de Geração de Respostas (IA):</span> Utiliza modelos de linguagem executados localmente via Ollama: <span class="highlight">LLaMA 3</span> (explicações detalhadas), <span class="highlight">Mistral</span> (respostas diretas), <span class="highlight">Phi-3</span> (respostas curtas). Avaliados quanto à capacidade de gerar explicações pedagógicas claras</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Fluxo de Interação:</strong> Aluno envia dúvida → Sistema identifica perfil → Seleciona conteúdo adequado → Motor de IA gera explicação personalizada → Resposta avaliada pelo estudante → Modelo do Estudante atualizado automaticamente</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Protótipo - Interface do Sistema -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Tiago Prado Moreira</div>
+                <div class="presenter-ra">RA: 2109577</div>
+            </div>
+            <h2>Protótipo do Tutor Inteligente</h2>
+            <div class="content">
+                <p><strong>Interface do Sistema:</strong></p>
+                <div class="image-container">
+                    <img src="figura-1.png" alt="Figura 1 - Menu para seleção de modelo de IA" onclick="openImageModal(this.src)">
+                    <div class="image-caption">Figura 1 – Menu para seleção de modelo de IA desejado. (Clique para ampliar)</div>
+                </div>
+                <p style="margin-top: 15px;"><strong>Funcionalidades Implementadas:</strong></p>
+                <ul>
+                    <li>Seleção de modelo de IA (LLaMA 3, Mistral, Phi-3)</li>
+                    <li>Interface web intuitiva e responsiva</li>
+                    <li>Comunicação com Ollama via API local</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9: Protótipo - Exemplos de Interação -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Tiago Prado Moreira</div>
+                <div class="presenter-ra">RA: 2109577</div>
+            </div>
+            <h2>Exemplos de Interação com o Tutor</h2>
+            <div class="content">
+                <div class="images-grid">
+                    <div class="image-container">
+                        <img src="figura-2.png" alt="Figura 2 - Interação com Phi-3" onclick="openImageModal(this.src)">
+                        <div class="image-caption">Figura 2 - Exemplo de interação com o software no model Phi-3 (Clique para ampliar)</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="fgura-3.png" alt="Figura 3 - Interface do tutor com Mistral" onclick="openImageModal(this.src)">
+                        <div class="image-caption">Figura 3 - Interface do tutor inteligente model Mistral (Clique para ampliar)</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px;"><strong>Características das Interações:</strong></p>
+                <ul>
+                    <li><span class="highlight">Phi-3:</span> Respostas curtas e diretas, adequadas para perguntas objetivas</li>
+                    <li><span class="highlight">Mistral:</span> Respostas concisas, ideal para resolução de problemas práticos</li>
+                    <li><span class="highlight">LLaMA 3:</span> Explicações mais detalhadas e contextualizadas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10: Vantagens do Ollama -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Vera Lucia de Oliveira Silverio</div>
+                <div class="presenter-ra">RA: 2231483</div>
+            </div>
+            <h2>Vantagens da Execução Local (Ollama)</h2>
+            <div class="content">
+                <p><strong>Por que escolher execução local?</strong></p>
+                <ul>
+                    <li><span class="highlight">Privacidade e Segurança:</span> Dados dos estudantes <span class="highlight">permanecem no ambiente local</span>, sem envio para servidores externos. Elimina riscos de vazamento de informações sensíveis</li>
+                    <li><span class="highlight">Custo Reduzido:</span> <span class="highlight">Sem dependência de servidores externos</span> ou serviços em nuvem pagos. Acessível para escolas com recursos limitados</li>
+                    <li><span class="highlight">Acessibilidade:</span> Funciona <span class="highlight">mesmo com baixa conectividade à internet</span>. Ideal para escolas em áreas com infraestrutura tecnológica limitada</li>
+                    <li><span class="highlight">Customização:</span> Tutor pode ser <span class="highlight">ajustado para conteúdos específicos</span> do currículo ou da instituição. Permite integração com sistemas como Moodle ou Telegram</li>
+                    <li><span class="highlight">Controle Total:</span> Instituição tem <span class="highlight">controle completo sobre dados dos estudantes</span>. Alinhado com LGPD e políticas de proteção de dados</li>
+                    <li><span class="highlight">Diferencial da Pesquisa:</span> Solução técnica específica para execução local que <span class="highlight">elimina dependência de servidores externos</span>, aspecto não abordado com profundidade em trabalhos anteriores</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11: Resultados -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Brenno Calderan Brossi</div>
+                <div class="presenter-ra">RA: 221084</div>
+            </div>
+            <h2>Resultados da Avaliação</h2>
+            <div class="content">
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-number">4,2-4,8</div>
+                        <div class="stat-label">Média de Avaliação<br>(escala 0-5)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Usuários Testados</div>
+                    </div>
+                </div>
+                <div class="images-grid" style="margin-top: 20px;">
+                    <div class="image-container">
+                        <img src="figura-4.png" alt="Figura 4 - Avaliação dos critérios" onclick="openImageModal(this.src)">
+                        <div class="image-caption">Figura 4 - Avaliação dos critérios de desempenho do tutor inteligente. (Clique para ampliar)</div>
+                    </div>
+                    <div class="image-container">
+                        <img src="figura-5.png" alt="Figura 5 - Nível de satisfação" onclick="openImageModal(this.src)">
+                        <div class="image-caption">Figura 5 - Nível de satisfação geral dos usuários. (Clique para ampliar)</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px;"><strong>Principais Conclusões:</strong></p>
+                <ul>
+                    <li><span class="highlight">Viabilidade comprovada</span> do uso de modelos de IA locais (Ollama) para fins educacionais</li>
+                    <li><span class="highlight">Boa aceitação geral</span> dos usuários, com média entre 4,2 e 4,8 em escala de 0 a 5</li>
+                    <li><span class="highlight">Potencial identificado</span> para reforçar aprendizado e oferecer explicações personalizadas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12: Apêndice - Questionário -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Camila Cristina Paiva Vieira</div>
+                <div class="presenter-ra">RA: 2101658</div>
+            </div>
+            <h2>Apêndice A - Questionário de Avaliação</h2>
+            <div class="content">
+                <div class="single-image">
+                    <img src="apendice.jpg" alt="Apêndice A - Questionário de avaliação do tutor inteligente" onclick="openImageModal(this.src)">
+                </div>
+                <p style="text-align: center; font-size: 0.85em; color: #666; margin-top: 10px;">(Clique na imagem para ampliar)</p>
+                <p style="margin-top: 15px; text-align: center;"><strong>Questionário utilizado na avaliação com 10 estudantes</strong></p>
+                <p style="text-align: center; font-size: 0.9em; color: #666;">Instrumento aplicado para coletar dados sobre clareza, usabilidade, relevância, tempo de resposta e confiança no sistema</p>
+            </div>
+        </div>
+
+        <!-- Slide 13: Conclusão -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Eder Clauber dos Santos dos Anjos</div>
+                <div class="presenter-ra">RA: 1806662</div>
+            </div>
+            <h2>Conclusão</h2>
+            <div class="content">
+                <p><strong>Contribuições Principais:</strong></p>
+                <ul>
+                    <li>IA representa <span class="highlight">oportunidade valiosa</span> para inovar práticas pedagógicas no ensino de Matemática</li>
+                    <li>Potencializa <span class="highlight">personalização, engajamento e eficácia</span> das avaliações, especialmente no 2º ano do Ensino Médio</li>
+                    <li>Atua como <span class="highlight">ponte entre conhecimento formal e realidade</span> dos estudantes, facilitando compreensão de conceitos abstratos</li>
+                    <li>Modelo proposto demonstra <span class="highlight">viabilidade técnica</span> com execução local, garantindo privacidade e acessibilidade</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Desafios e Necessidades:</strong></p>
+                <ul>
+                    <li>Necessário <span class="highlight">investir em formação docente</span> para uso adequado da tecnologia</li>
+                    <li>Requer <span class="highlight">infraestrutura tecnológica</span> nas escolas, mas com custo reduzido (execução local)</li>
+                    <li>Precisa de <span class="highlight">políticas claras</span> para proteção de dados e uso ético (OECD, 2021)</li>
+                    <li>Uso ético e responsável pode tornar o ensino mais <span class="highlight">inclusivo e significativo</span>, especialmente em contextos de vulnerabilidade</li>
+                </ul>
+                <p style="margin-top: 15px; font-size: 1.1em; text-align: center; color: #667eea; font-weight: 600;">
+                    <strong>A tecnologia, aliada ao olhar humano, tem potencial transformador</strong>
+                </p>
+                <p style="margin-top: 10px; font-size: 0.95em; text-align: center; color: #666;">
+                    IA como ferramenta de apoio ao professor, não substituição do papel humano no ensino
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 14: Agradecimentos -->
+        <div class="slide content-slide">
+            <div class="presenter-header">
+                <div class="presenter-name">Todos os Integrantes</div>
+                <div class="presenter-ra">Equipe TCC</div>
+            </div>
+            <h2>Agradecimentos</h2>
+            <div class="content">
+                <p style="font-size: 1.3em; margin-bottom: 30px; text-align: center;">
+                    Obrigado pela atenção!
+                </p>
+
+                <div class="authors" style="margin: 30px auto; max-width: 900px; width: 100%;">
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Brenno Calderan Brossi</div>
+                        <div class="author-ra">RA: 221084</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Camila Cristina Paiva Vieira</div>
+                        <div class="author-ra">RA: 2101658</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Eder Clauber dos Santos dos Anjos</div>
+                        <div class="author-ra">RA: 1806662</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Franklin Leandro Martins</div>
+                        <div class="author-ra">RA: 1401068</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Gabriel Henrique Souza Ribeiro</div>
+                        <div class="author-ra">RA: 2213730</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Julio Anderson Guimarães Leite</div>
+                        <div class="author-ra">RA: 2104217</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Tiago Prado Moreira</div>
+                        <div class="author-ra">RA: 2109577</div>
+                    </div>
+                    <div class="author" style="background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); text-align: center;">
+                        <div class="author-name">Vera Lucia de Oliveira Silverio</div>
+                        <div class="author-ra">RA: 2231483</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.2em; text-align: center; margin-top: 30px;">
+                    <strong>Orientador:</strong> Prof. Alex Sandro Rodrigues Ancioto
+                </p>
+
+                <p style="font-size: 1.2em; text-align: center; margin-top: 30px;">
+                    <strong>Banca Examinadora</strong>
+                </p>
+                <p style="font-size: 1.1em; text-align: center; margin-top: 20px; color: #667eea;">
+                    Estamos à disposição para perguntas
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para expandir imagens -->
+    <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+        <div class="image-modal-close" onclick="closeImageModal()">×</div>
+        <img id="modalImage" src="" alt="Imagem ampliada">
+    </div>
+
+    <!-- Navegação -->
+    <div class="slide-indicator">
+        <span id="current-slide">1</span> / <span id="total-slides">14</span>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" onclick="nextSlide()">Próximo ▶</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                previousSlide();
+            }
+        });
+
+        // Inicialização
+        showSlide(0);
+
+        // Função para abrir modal de imagem
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Função para fechar modal de imagem
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
+</body>
+</html>
