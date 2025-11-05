@@ -1,0 +1,42 @@
+═══════════════════════════════════════════════════════
+🚀 GUIA RÁPIDO - DEPLOY NA VERCEL
+═══════════════════════════════════════════════════════
+
+MÉTODO MAIS FÁCIL (5 minutos):
+
+1. Acesse: https://vercel.com
+2. Faça login (pode usar GitHub, Google ou email)
+3. Clique em "Add New..." → "Project"
+4. Escolha "Upload a folder" ou "Deploy"
+5. Selecione TODOS os arquivos:
+   ✅ apresentacao.html (ou renomeie para index.html)
+   ✅ logo-univesp.png
+   ✅ fundo.jpg
+   ✅ figura-1.png
+   ✅ figura-2.png
+   ✅ fgura-3.png
+   ✅ figura-4.png
+   ✅ figura-5.png
+   ✅ apendice.jpg
+
+6. Clique em "Deploy"
+7. Pronto! Você receberá uma URL tipo:
+   https://seu-projeto.vercel.app
+
+═══════════════════════════════════════════════════════
+
+💡 DICA IMPORTANTE:
+Para que a apresentação seja a página inicial:
+→ Renomeie "apresentacao.html" para "index.html"
+
+Ou configure o vercel.json (já está criado)
+
+═══════════════════════════════════════════════════════
+
+📱 USAR NA APRESENTAÇÃO:
+1. Abra a URL no navegador
+2. Pressione F11 para tela cheia
+3. Use as setas do teclado para navegar
+4. Todos podem acessar a mesma URL!
+
+═══════════════════════════════════════════════════════
